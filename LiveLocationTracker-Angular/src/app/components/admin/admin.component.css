@@ -1,0 +1,34 @@
+.admin-header {
+  font-family: 'Josefin Sans', sans-serif;
+  display: flex;
+  /* flex-wrap: wrap; */
+  overflow: auto;
+  background-color: white;
+  border-bottom: 1px solid rgb(183, 181, 181);
+  position: sticky;
+  top: 61px;
+  z-index: 0;
+}
+
+
+.admin-header a {
+  white-space: nowrap;
+  display: inline-block;
+  margin: 10px 5px;
+  text-decoration: none;
+  color: black;
+  /* border: 2px solid red; */
+}
+
+.admin-header a:hover{
+  text-decoration: underline;
+}
+
+@media screen and (min-width:700px) {
+
+  .admin-header a {
+    margin: 15px 10px;
+
+  }
+
+}

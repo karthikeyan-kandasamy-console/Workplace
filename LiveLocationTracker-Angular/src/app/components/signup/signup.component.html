@@ -1,0 +1,55 @@
+<div>
+  <div class="login-total">
+    <div class="login-left">
+      <img [src]="'assets/signup.webp'" alt="Image of Signup" width="2000" height="2000">
+    </div>
+    <div class="login-right">
+      <div class="right-content">
+        <h1>SIGNUP</h1>
+        <p style="margin: 25px 13%;">We are honored to have you join.</p>
+        <form [formGroup]="signupForm" (ngSubmit)="addUser()">
+          <div class="key">
+            <input [type]="'text'" placeholder="Name"  formControlName="name" name="name">
+
+            <small *ngIf="signupForm.controls['name'].errors?.['required'] && signupForm.controls['name'].touched">Enter Name</small>
+            <small *ngIf="signupForm.controls['name'].errors?.['nameAlphabetError'] && signupForm.controls['name'].dirty">Name Only contain Alphabets</small>
+            <small *ngIf="signupForm.controls['name'].errors?.['pattern'] && signupForm.controls['name'].dirty">Enter valid name</small>
+            <small *ngIf="signupForm.controls['name'].errors?.['nameLengthError'] && signupForm.controls['name'].dirty">Name Min length is 2</small>
+          </div>
+          <div class="key">
+            <input [type]="'email'" placeholder="Email"  formControlName="email" name="email" class="emailinput">
+
+            <small *ngIf="signupForm.controls['email'].errors?.['required'] && signupForm.controls['email'].touched">Enter Email Address</small>
+            <small *ngIf="(signupForm.controls['email'].errors?.['pattern'] || signupForm.controls['email'].errors?.['email']) && signupForm.controls['email'].dirty">Enter Valid Email Address</small>
+          </div>
+          <div class="key">
+            <input [type]="showPassword?'text':'password'" placeholder="Password"  formControlName="password" name="Password">
+
+            <small *ngIf="signupForm.controls['password'].errors?.['required'] && signupForm.controls['password'].touched">Enter Password</small>
+            <small *ngIf="signupForm.controls['password'].errors?.['pattern'] && signupForm.controls['password'].dirty">Contain 0-9,a-z,A-Z,special character, Min Length 8 </small>
+          </div>
+          <div class="key">
+            <input [type]="showPassword?'text':'password'" placeholder="Re-Enter Password"  formControlName="repassword" name="Password">
+
+            <small *ngIf="signupForm.controls['repassword'].errors?.['required'] && signupForm.controls['repassword'].touched">Enter Re-Password</small>
+            <small *ngIf="signupForm.controls['repassword'].dirty && signupForm.controls['repassword'].errors?.['passwordmatcher']">Password Not match</small>
+          </div>
+          <div class="static">
+            <div class="static-left">
+              <input type="checkbox" name="showpass" id="showpass" (click)="togglePassword()">
+              <label for="showpass"><p>Show password</p></label>
+            </div>
+          </div>
+          <div class="btn">
+            <button [disabled]="signupForm.invalid || disableButton" type="submit">CREATE</button>
+          </div>
+        </form>
+        <p>Already have an account ? <a routerLink="/login" [style]="'text-decoration:none;'">Login</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
