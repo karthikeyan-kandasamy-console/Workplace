@@ -9,11 +9,3 @@ Camel case is a naming convention where the first word is lowercase, and each su
 ### Example:
 - **Variable name**: `userName`, `totalAmount`
 - **Method name**: `getUserName()`, `calculateTotal()`
-
-```java
-String userName;
-double totalAmount;
-
-public void getUserName() {
-    // method body
-}
