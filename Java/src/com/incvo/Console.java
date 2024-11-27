@@ -11,7 +11,7 @@ public class Console {
 
 
         int[] arr = {10,20};
-
+        
         System.out.println(arr[2]);
     
     }
