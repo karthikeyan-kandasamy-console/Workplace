@@ -31,8 +31,8 @@ public class SortComparator {
 
 
 class Sample {
-    public String name;
-    public int age;
+    protected String name;
+    protected int age;
 
     public Sample(String name, int age) {
         this.name = name;
