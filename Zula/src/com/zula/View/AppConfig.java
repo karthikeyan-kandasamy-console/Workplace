@@ -1,24 +1,23 @@
 package com.zula.View;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import com.zula.Model.Cab;
 import com.zula.Model.Driver;
 import com.zula.Model.Locations;
 import com.zula.Model.User;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class AppConfig {
 
     public static int loginuser = 1;
     public static int logindriver = 1;
 
-    public static List<Locations> locations =  new ArrayList<Locations>();
-    public static List<Cab> cabs =  new ArrayList<Cab>();
-    public static List<User> customer =  new ArrayList<User>();
-    public static List<Driver> driver =  new ArrayList<Driver>();
+    public static List<Locations> locations =  new ArrayList<>();
+    public static List<Cab> cabs =  new ArrayList<>();
+    public static List<User> customer =  new ArrayList<>();
+    public static List<Driver> driver =  new ArrayList<>();
 
     public static Map<String,Integer> map =  new HashMap<>();
 
