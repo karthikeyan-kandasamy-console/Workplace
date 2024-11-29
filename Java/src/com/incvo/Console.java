@@ -4,13 +4,18 @@ public class Console {
 
     public static void main(String[] args) {
 
-        System.out.println("Hello");
-        System.out.println(10/0);
+        for(String iteration:args){
+            System.out.println(iteration);
 
-        int[] input = {10,20};
-
-        System.out.println(input[2]);
+        }
     
+    }
+
+    public static void main(Integer[] input) {
+        System.out.println("Hello");
+        for(Integer items:input){
+            System.out.println(items);
+        }
     }
 
 

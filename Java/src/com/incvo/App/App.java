@@ -4,14 +4,19 @@ import com.incvo.Interface.Bank;
 public class App implements Bank{
 
     public static void main(String[] args) {
-        App app = new App();
-        app.login();
+        // App app = new App();
+        // app.login();
     }
 
-    @Override
-    public void credit() {
-        
+
+    private static String performSubString(){
+
     }
+
+    // @Override
+    // public void credit() {
+        
+    // }
 
     @Override
     public void debit() {

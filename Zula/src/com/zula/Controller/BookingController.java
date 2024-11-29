@@ -1,27 +1,26 @@
 package com.zula.Controller;
 
-import java.util.Scanner;
-
+import com.zula.Interface.BookingHandler;
 import com.zula.Model.Cab;
 import com.zula.Model.Driver;
 import com.zula.Model.Locations;
 import com.zula.Model.User;
 import com.zula.View.AppConfig;
+import java.util.Scanner;
 
-public class Booking {
+public class BookingController implements BookingHandler{
 
-    public Booking() {
+    public BookingController() { }
 
-    }
+    @Override
+    public  void start() {
 
-    protected void start() {
+        //int prime_number = 10;
+        // Integer copy_prime_number = prime_number; //autoboxing
+        // int follow_up_prime_number_conversion = copy_prime_number; //unboxing
 
-        int prime_number = 10;
-        Integer copy_prime_number = prime_number; //autoboxing
-        int follow_up_prime_number_conversion = copy_prime_number; //unboxing
-
-        System.out.println(Integer.valueOf(copy_prime_number+""));
-        System.out.println(Integer.parseInt(follow_up_prime_number_conversion+""));
+        // System.out.println(Integer.valueOf(copy_prime_number+""));
+        // System.out.println(Integer.parseInt(follow_up_prime_number_conversion+""));
 
         Scanner scanner = new Scanner(System.in);
         while (true) {
@@ -35,46 +34,24 @@ public class Booking {
             int input = scanner.nextInt();
 
             switch (input) {
-                case 1:
-                    book(scanner);
-                    break;
-                case 2:
-                    view();
-                    break;
-                case 3:
+                case 1 -> book(scanner);
+                case 2 -> view();
+                case 3 -> {
                     scanner.close();
                     return;
-                case 4:
-                    viewDriver();
-                    break;
-                case 5:
-                    viewUser();
-                    break;
-                case 6:
-                    loginAsUser();
-                    break;
-                case 7:
-                    loginAsDriver();
-                    break;
-                default:
-                    System.out.println("Please Enter Valid Input.");
-                    break;
+                }
+                case 4 -> viewDriver();
+                case 5 -> viewUser();
+                case 6 -> loginAsUser();
+                case 7 -> loginAsDriver();
+                default -> System.out.println("Please Enter Valid Input.");
             }
 
         }
     }
 
-    private void loginAsUser() {
-
-        
-        
-    }
-
-    private void loginAsDriver() {
-        
-    }
-
-    private void viewDriver() {
+    @Override
+    public  void viewDriver() {
 
         for (Driver driver : AppConfig.driver) {
 
@@ -99,7 +76,8 @@ public class Booking {
 
     }
 
-    private void viewUser() {
+    @Override
+    public  void viewUser() {
 
         for (User customer : AppConfig.customer) {
 
@@ -124,7 +102,11 @@ public class Booking {
 
     }
 
-    private void view() {
+
+    @Override
+    public void view() {
+
+        LoggerController.log("View Initialized");
 
         for (Cab cab : AppConfig.cabs) {
             System.out.println("Cab Id : " + cab.getCabId());
@@ -145,7 +127,10 @@ public class Booking {
         }
     }
 
-    private void book(Scanner scanner) {
+
+    @Override
+    public void book(Scanner scanner) {
+        LoggerController.log("Booking Initialized");
         printCabDetails();
 
         scanner.nextLine();
@@ -219,7 +204,8 @@ public class Booking {
         }
     }
 
-    private void printCabDetails() {
+    @Override
+    public  void printCabDetails() {
 
         System.out.println("---------------");
         System.out.println("Location     CabId");
@@ -232,10 +218,10 @@ public class Booking {
 
     }
 
-    private Cab getNearByCab(String src) {
+    @Override
+    public Cab getNearByCab(String src) {
 
         // ArrayList<Cab> list = new ArrayList<>();
-
         int index = 0, count = 0;
         int minLeng = Integer.MAX_VALUE;
 
@@ -266,6 +252,16 @@ public class Booking {
 
         return AppConfig.cabs.get(index);
 
+    }
+
+    @Override
+    public void loginAsUser() {
+        
+    }
+
+    @Override
+    public void loginAsDriver() {
+        
     }
 
 }

@@ -1,0 +1,12 @@
+Nov 28, 2024 5:23:43 PM com.zula.View.LoggerExample main
+INFO: This is an info message.
+Nov 28, 2024 5:23:43 PM com.zula.View.LoggerExample main
+WARNING: This is a warning message.
+Nov 28, 2024 5:23:43 PM com.zula.View.LoggerExample main
+SEVERE: This is an error message.
+Nov 28, 2024 5:23:58 PM com.zula.View.LoggerExample main
+INFO: This is an info message.
+Nov 28, 2024 5:23:58 PM com.zula.View.LoggerExample main
+WARNING: This is a warning message.
+Nov 28, 2024 5:23:58 PM com.zula.View.LoggerExample main
+SEVERE: This is an error message.
