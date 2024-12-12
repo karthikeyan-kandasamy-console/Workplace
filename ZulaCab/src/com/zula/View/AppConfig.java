@@ -8,8 +8,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import com.zula.Abstract.*;
 
-public class AppConfig {
+public class AppConfig extends Config{
+    
+
+    public AppConfig(){
+        super("Hello World");
+    }
 
     public static int loginuser = 1;
     public static int logindriver = 1;
@@ -22,7 +28,7 @@ public class AppConfig {
     public static Map<String,Integer> map =  new HashMap<>();
 
     
-    protected  static void initialize(){
+    public void initialize(){
         
         locations.add(new Locations(1,"A",0));
         locations.add(new Locations(3,"C",4));

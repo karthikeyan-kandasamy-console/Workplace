@@ -14,7 +14,8 @@ import com.zula.Controller.LoggerAction;
 
 public class Zula extends BookingController{
     static{
-        AppConfig.initialize();
+        AppConfig appConfig =  new AppConfig();
+        appConfig.initialize();
         if (!LoggerAction.initialize()) {
             System.out.println("Logger Initialize Failed");
         }
